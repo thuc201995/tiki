@@ -2,14 +2,16 @@ import actionType from "../actions/ActionType";
 const initialState = () => ({
   isFetching: false,
   data: [],
-  fetchError: false
+  fetchError: false,
+  deleteSuccess: false
 });
 const books = (state = initialState(), action) => {
   switch (action.type) {
     case actionType.FETCH_BOOK_LISTS_REQUEST:
       return {
         ...state,
-        isFetching: true
+        isFetching: true,
+        deleteSuccess: false
       };
     case actionType.FETCH_BOOK_LISTS_SUCCESS:
       return {
@@ -32,7 +34,8 @@ const books = (state = initialState(), action) => {
     case actionType.DELETE_BOOK_SUCCESS:
       return {
         ...state,
-        isFetching: false
+        isFetching: false,
+        deleteSuccess: true
       };
     case actionType.DELETE_BOOK_FAILURE:
       return {

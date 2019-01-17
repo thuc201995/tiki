@@ -7,7 +7,7 @@ const initialState = () => ({
     isOpen: false,
     modalHeader: "",
     modalContent: "",
-    modalClass: ""
+    modalClass: "green"
   }
 });
 const book = (state = initialState(), action) => {

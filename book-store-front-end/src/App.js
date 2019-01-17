@@ -4,7 +4,6 @@ import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import Header from "./modules/layouts/containers/Header";
 import routes from "./modules/router/index";
 import { Segment } from "semantic-ui-react";
-import BookForm from "./modules/books/containers/BookForm";
 
 class App extends Component {
   render() {
@@ -16,7 +15,6 @@ class App extends Component {
             <Segment>
               <Switch>
                 {routes.map((route, idx) => {
-                  console.log(route);
                   return route.component ? (
                     <Route
                       key={idx}
