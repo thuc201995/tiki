@@ -1,7 +1,10 @@
-var express = require("express");
-var router = express.Router();
-
+const express = require("express");
+const router = express.Router();
+const cors = require("cors");
 const bookController = require("../controllers/book");
+const bodyParser = require("body-parser");
+router.use(cors());
+router.use(bodyParser.json());
 
 /* GET home page. */
 router.get("/", function(req, res, next) {

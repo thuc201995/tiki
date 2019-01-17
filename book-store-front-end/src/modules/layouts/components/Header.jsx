@@ -6,7 +6,7 @@ import logo from "../../../logo.png";
 
 const MenuItems = [
   { name: "Book lists", path: "/books" },
-  { name: "Add new book", path: "/add-new-book" }
+  { name: "Book Form", path: "/book-form" }
 ];
 
 class Header extends PureComponent {
