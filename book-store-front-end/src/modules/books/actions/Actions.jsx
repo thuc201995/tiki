@@ -2,7 +2,6 @@ import { RSAA } from "redux-api-middleware";
 import ActionType from "./ActionType";
 import { bookApi } from "../../../config/apiRoot";
 export const fetchBooks = () => {
-  console.log(bookApi);
   return {
     [RSAA]: {
       endpoint: bookApi,

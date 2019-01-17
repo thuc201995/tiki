@@ -156,13 +156,14 @@ class BookLists extends PureComponent {
   }
   componentDidUpdate(prevProps) {
     if (
-      this.props.books !== prevProps.books &&
-      this.props.isFetching === false
+      this.props.books.deleteSuccess !== prevProps.books.deleteSuccess &&
+      this.props.books.isFetching === false
     ) {
       this.props.fetchBooks();
     }
   }
   edit = id => {
+    this.props.handleChangeMenu("/book-form");
     this.props.history.push(`book-form/${id}`);
   };
   handleOpenConfirmModal = id => {
@@ -191,17 +192,6 @@ class BookLists extends PureComponent {
             edit={this.edit}
             handleOpenConfirmModal={this.handleOpenConfirmModal}
           />
-          {/* <TableFooter
-      key="pagination"
-      activePage={page ? page : 1}
-      min={1}
-      max={pages ? pages : 1}
-      total={total ? total : 0}
-      limit={limit ? limit : 0}
-      handlePageChange={handlePageChange}
-      handleInputPaginateChange={handleInputPaginateChange}
-      totalCell={headerData.length}
-    /> */}
         </Table>
         {isOpenModal && (
           <ConFirmModal
